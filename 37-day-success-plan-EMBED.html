@@ -1,0 +1,29 @@
+<!-- ============================================================
+     37-Day Success Plan Student Portal: GHL embed code
+     Paste EVERYTHING in this file into a GHL Custom JS/HTML (Code) element.
+     The iframe grows and shrinks with the portal, so dropdowns are never cut off.
+     ============================================================ -->
+<iframe
+  id="kmc-portal-37-day"
+  src="https://logan-kmc.github.io/KMC-Student-Portals/37-day-success-plan.html"
+  title="37-Day Success Plan Student Portal"
+  style="width: 100%; height: 760px; border: 0; display: block;"
+></iframe>
+<script>
+(function () {
+  var frame = document.getElementById("kmc-portal-37-day");
+  window.addEventListener("message", function (e) {
+    if (!frame || e.source !== frame.contentWindow || e.origin !== "https://logan-kmc.github.io") { return; }
+    var d = e.data || {};
+    // The portal reports its height: match it so nothing is cut off.
+    if (d.type === "kmc-hub-height" && d.height > 0) { frame.style.height = d.height + "px"; }
+    // A dropdown opened: bring it into view if it is below the fold.
+    if (d.type === "kmc-hub-scroll") {
+      var y = frame.getBoundingClientRect().top + window.pageYOffset + (d.top || 0);
+      if (y < window.pageYOffset || y > window.pageYOffset + window.innerHeight * 0.6) {
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }
+  });
+})();
+</script>

@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>37-Day Success Plan - Student Portal (preview)</title>
+<style>
+  /* PREVIEW-ONLY styles. These are NOT part of what you paste into GHL. */
+  body { margin: 0; background: #F5F2EB; padding: 24px 0 40px; }
+</style>
+</head>
+<body>
+
+<!-- ===== COPY FROM HERE INTO GHL ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Geist:wght@400;500;600;700&display=swap">
+
+<style>
+#kmc-hub, #kmc-hub * { box-sizing: border-box; }
+#kmc-hub {
+  --onyx: #0A2E35; --emerald: #164F50; --sapphire: #087F7B; --paraiba: #2FCFC0;
+  --moonstone: #F5F2EB; --ink: #030B14; --platinum: #D9E6EA; --pink: #F01878;
+  --sans: "Geist", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--moonstone);
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px;
+  width: 100%;
+  text-align: left;
+}
+/* Shield against the host page (GHL) styling plain tags like p, button, svg.
+   It skips the inside of a Voomly player, which brings its own styles. */
+#kmc-hub *:not(.kmc-voomly *) {
+  font-family: inherit; font-size: inherit; font-weight: inherit; font-style: inherit;
+  line-height: inherit; letter-spacing: inherit; text-transform: inherit;
+  text-align: inherit; color: inherit; text-shadow: none;
+}
+#kmc-hub svg:not(.kmc-voomly *) { fill: none; stroke: currentColor; }
+#kmc-hub a:not(.kmc-voomly *), #kmc-hub a:not(.kmc-voomly *):hover { text-decoration: none; }
+#kmc-hub h2, #kmc-hub h3, #kmc-hub p { margin: 0; padding: 0; }
+#kmc-hub .kmc-label, #kmc-hub .kmc-blurb, #kmc-hub .kmc-title,
+#kmc-hub .kmc-panel-title, #kmc-hub .kmc-vitem span { overflow-wrap: anywhere; }
+
+/* Header card */
+#kmc-hub .kmc-head {
+  position: relative; overflow: hidden; isolation: isolate;
+  background:
+    radial-gradient(90% 120% at 100% 0%, rgba(47,207,192,.20) 0%, rgba(47,207,192,0) 55%),
+    radial-gradient(60% 90% at 0% 100%, rgba(8,127,123,.30) 0%, rgba(8,127,123,0) 60%),
+    linear-gradient(135deg, var(--onyx) 0%, #0c3840 55%, var(--emerald) 100%);
+  color: var(--moonstone);
+  border-radius: 24px; padding: 48px 40px 44px; margin-bottom: 24px;
+  box-shadow: 0 18px 40px -18px rgba(10,46,53,.55);
+}
+/* Fine hairline grid, fading out to the left */
+#kmc-hub .kmc-head::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(217,230,234,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217,230,234,.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: linear-gradient(270deg, #000 0%, transparent 70%);
+  mask-image: linear-gradient(270deg, #000 0%, transparent 70%);
+}
+/* Big tone-on-tone numeral */
+#kmc-hub .kmc-mono {
+  position: absolute; right: 28px; top: 50%; transform: translateY(-50%); z-index: -1;
+  font-family: var(--serif); font-weight: 600; font-style: italic;
+  font-size: clamp(130px, 19vw, 230px); line-height: .8; letter-spacing: -.02em;
+  color: rgba(47,207,192,.07); -webkit-text-stroke: 1.5px rgba(47,207,192,.38);
+  pointer-events: none; user-select: none;
+}
+#kmc-hub .kmc-eyebrow {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--sans); font-size: 13px; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--paraiba);
+  margin-bottom: 16px;
+}
+#kmc-hub .kmc-eyebrow::before {
+  content: ""; width: 32px; height: 2px; border-radius: 2px; background: var(--paraiba); flex: none;
+}
+#kmc-hub .kmc-title {
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(34px, 6vw, 56px); line-height: 1.05;
+  color: var(--moonstone); margin-bottom: 14px;
+}
+#kmc-hub .kmc-title em { font-style: italic; font-weight: 500; color: var(--paraiba); }
+#kmc-hub .kmc-sub { font-size: 18px; line-height: 1.5; color: var(--platinum); max-width: 46ch; }
+
+/* Tile grid */
+#kmc-hub .kmc-grid {
+  position: relative;
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+#kmc-hub .kmc-tile {
+  appearance: none; -webkit-appearance: none;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+  width: 100%; min-height: 148px; margin: 0;
+  padding: 20px;
+  text-align: left; text-decoration: none;
+  font-family: var(--sans); font-size: 16px; line-height: 1.35;
+  color: var(--ink); background: #fff;
+  border: 1px solid var(--platinum); border-radius: 16px;
+  cursor: pointer; position: relative; overflow: hidden;
+  background: linear-gradient(180deg, #fff 0%, #fbfaf6 100%);
+  box-shadow: 0 1px 2px rgba(10,46,53,.05), 0 8px 24px -16px rgba(10,46,53,.25);
+  transition: transform .2s ease, border-color .2s ease, background .25s ease, color .25s ease, box-shadow .2s ease;
+  animation: kmc-rise .5s cubic-bezier(.2,.7,.2,1) backwards;
+  animation-delay: calc(var(--d, 0) * 70ms);
+}
+@keyframes kmc-rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+/* Accent line that sweeps across the top on hover */
+#kmc-hub .kmc-tile::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px;
+  background: linear-gradient(90deg, var(--sapphire), var(--paraiba));
+  transform: scaleX(0); transform-origin: left; transition: transform .35s ease;
+}
+#kmc-hub .kmc-tile:hover::before, #kmc-hub .kmc-tile:focus-visible::before { transform: scaleX(1); }
+#kmc-hub .kmc-tile.is-needed::before { display: none; }
+#kmc-hub .kmc-tile:hover, #kmc-hub .kmc-tile:focus-visible {
+  transform: translateY(-4px); border-color: rgba(8,127,123,.45);
+  box-shadow: 0 2px 4px rgba(10,46,53,.06), 0 18px 34px -16px rgba(10,46,53,.40);
+}
+#kmc-hub .kmc-cue {
+  position: absolute; right: 16px; bottom: 16px;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 1px solid var(--platinum); color: var(--sapphire);
+  transition: transform .25s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+#kmc-hub .kmc-cue svg { width: 16px; height: 16px; display: block; }
+#kmc-hub .kmc-tile:hover .kmc-cue { background: var(--sapphire); border-color: var(--sapphire); color: #fff; }
+#kmc-hub a.kmc-tile:hover .kmc-cue { transform: translate(2px, -2px); }
+#kmc-hub .kmc-tile.is-open .kmc-cue { transform: rotate(180deg); background: var(--paraiba); border-color: var(--paraiba); color: var(--onyx); }
+#kmc-hub .kmc-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px; border-radius: 16px;
+  background: linear-gradient(140deg, var(--emerald) 0%, var(--onyx) 100%);
+  color: var(--paraiba); margin-bottom: 14px; flex: none;
+  box-shadow: inset 0 0 0 1px rgba(47,207,192,.18), 0 6px 14px -8px rgba(10,46,53,.6);
+  transition: transform .25s ease;
+}
+#kmc-hub .kmc-tile:hover .kmc-icon { transform: rotate(-6deg) scale(1.06); }
+#kmc-hub .kmc-icon svg { width: 24px; height: 24px; display: block; }
+#kmc-hub .kmc-label { font-weight: 600; font-size: 17px; color: inherit; }
+#kmc-hub .kmc-blurb { font-size: 16px; color: #4a5a60; padding-right: 40px; }
+#kmc-hub .kmc-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+#kmc-hub .kmc-tile.is-open {
+  background: linear-gradient(150deg, var(--onyx) 0%, var(--emerald) 100%);
+  color: var(--moonstone); border-color: var(--onyx);
+  box-shadow: 0 0 0 1px rgba(47,207,192,.35), 0 20px 36px -16px rgba(10,46,53,.6);
+}
+#kmc-hub .kmc-tile.is-open .kmc-blurb { color: var(--platinum); }
+#kmc-hub .kmc-tile.is-open .kmc-icon { background: var(--paraiba); color: var(--onyx); }
+#kmc-hub .kmc-tile.is-needed {
+  border-style: dashed; background: transparent; color: #5b6a70; cursor: not-allowed;
+}
+#kmc-hub .kmc-tile.is-needed:hover { transform: none; box-shadow: none; border-color: var(--platinum); }
+#kmc-hub .kmc-tile.is-needed .kmc-icon { background: var(--platinum); color: #5b6a70; box-shadow: none; }
+#kmc-hub .kmc-tile.is-needed:hover .kmc-icon { transform: none; }
+#kmc-hub .kmc-chip {
+  margin-top: auto; font-size: 12px; font-weight: 600; letter-spacing: .04em;
+  padding: 3px 10px; border-radius: 999px; background: var(--platinum); color: #35474d;
+}
+#kmc-hub .kmc-tile:focus-visible, #kmc-hub .kmc-btn:focus-visible,
+#kmc-hub .kmc-close:focus-visible, #kmc-hub .kmc-vitem:focus-visible {
+  outline: 3px solid var(--sapphire); outline-offset: 2px;
+}
+/* The close button sits on the dark header, so its ring is the light accent. */
+#kmc-hub .kmc-close:focus-visible { outline-color: var(--paraiba); }
+
+/* Dropdown panel */
+#kmc-hub .kmc-panel {
+  grid-column: 1 / -1; position: relative;
+  display: grid; grid-template-rows: 0fr; opacity: 0;
+  transition: grid-template-rows .28s ease, opacity .28s ease;
+}
+#kmc-hub .kmc-panel.is-open { grid-template-rows: 1fr; opacity: 1; }
+#kmc-hub .kmc-panel-clip { overflow: hidden; min-height: 0; }
+#kmc-hub .kmc-panel-card {
+  background: #fff; border: 1px solid var(--platinum); border-radius: 16px; overflow: hidden;
+}
+#kmc-hub .kmc-caret {
+  position: absolute; top: -8px; left: 50px; width: 16px; height: 16px;
+  margin-left: -8px; background: var(--onyx); transform: rotate(45deg);
+  border-radius: 3px 0 0 0; z-index: 2; pointer-events: none;
+}
+#kmc-hub .kmc-panel-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background:
+    radial-gradient(80% 160% at 100% 0%, rgba(47,207,192,.18) 0%, rgba(47,207,192,0) 60%),
+    linear-gradient(135deg, var(--onyx) 0%, var(--emerald) 100%);
+  color: var(--moonstone); padding: 12px 14px 12px 24px; min-height: 64px;
+}
+#kmc-hub .kmc-panel-title { font-family: var(--serif); font-weight: 600; font-size: 28px; line-height: 1.1; color: var(--moonstone); }
+#kmc-hub .kmc-close {
+  appearance: none; -webkit-appearance: none; flex: none;
+  width: 44px; height: 44px; border-radius: 50%; margin: 0; padding: 0;
+  background: transparent; color: var(--moonstone);
+  border: 1px solid rgba(217,230,234,.4); cursor: pointer;
+  font-family: var(--sans); font-size: 26px; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+#kmc-hub .kmc-close:hover { border-color: var(--paraiba); }
+#kmc-hub .kmc-panel-body { padding: 16px 20px 20px; }
+#kmc-hub .kmc-toolbar { display: flex; justify-content: flex-end; margin-bottom: 12px; }
+#kmc-hub .kmc-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 22px; border-radius: 999px;
+  background: var(--pink); color: #fff; text-decoration: none;
+  /* 19px bold = "large text", so white on brand pink meets contrast (4.1:1, needs 3:1) */
+  font-family: var(--sans); font-weight: 700; font-size: 19px;
+  transition: transform .15s ease;
+}
+#kmc-hub .kmc-btn:hover { transform: translateY(-1px); color: #fff; }
+#kmc-hub .kmc-frame { display: block; width: 100%; height: 1000px; border: 0; border-radius: 10px; background: var(--moonstone); }
+#kmc-hub .kmc-frame.is-embed { height: 700px; }
+
+/* Videos */
+#kmc-hub .kmc-vlist { list-style: none; margin: 0 0 4px; padding: 0; display: grid; gap: 8px; }
+#kmc-hub .kmc-vitem {
+  appearance: none; -webkit-appearance: none; width: 100%; margin: 0;
+  display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 8px 14px;
+  text-align: left; font-family: var(--sans); font-size: 16px; font-weight: 500; color: var(--ink);
+  background: var(--moonstone); border: 1px solid var(--platinum); border-radius: 12px; cursor: pointer;
+}
+#kmc-hub .kmc-vitem:hover { border-color: var(--sapphire); }
+#kmc-hub .kmc-vitem.is-playing { background: var(--emerald); color: var(--moonstone); border-color: var(--emerald); }
+#kmc-hub .kmc-vitem svg { width: 20px; height: 20px; flex: none; color: var(--sapphire); }
+#kmc-hub .kmc-vitem.is-playing svg { color: var(--paraiba); }
+#kmc-hub .kmc-player { margin-top: 16px; }#kmc-hub .kmc-player-box { aspect-ratio: 16 / 9; width: 100%; background: var(--ink); border-radius: 12px; overflow: hidden; }
+#kmc-hub .kmc-player-box iframe, #kmc-hub .kmc-player-box video { width: 100%; height: 100%; border: 0; display: block; background: #000; }
+
+#kmc-hub .kmc-empty { text-align: center; padding: 36px 16px; font-size: 18px; color: #35474d; }
+#kmc-hub .kmc-foot {
+  text-align: center; margin-top: 28px; font-size: 12px; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase; color: #5b6a70;
+}
+
+@media (max-width: 900px) {
+  #kmc-hub .kmc-sub { max-width: 34ch; }
+  #kmc-hub .kmc-mono { font-size: 150px; right: 22px; }
+}
+@media (max-width: 600px) {
+  /* Too narrow for the big number to sit beside the words; hide it on phones. */
+  #kmc-hub .kmc-mono { display: none; }
+}
+@media (max-width: 900px) and (min-width: 601px) {
+  #kmc-hub .kmc-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+}
+@media (max-width: 600px) {
+  #kmc-hub { padding: 12px; }
+  #kmc-hub .kmc-head { padding: 30px 22px 28px; border-radius: 18px; }
+  #kmc-hub .kmc-cue { right: 12px; bottom: 12px; width: 28px; height: 28px; }
+  #kmc-hub .kmc-blurb { padding-right: 30px; }
+  #kmc-hub .kmc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  #kmc-hub .kmc-tile { min-height: 140px; padding: 16px; }
+  #kmc-hub .kmc-panel-body { padding: 12px 12px 16px; }
+  #kmc-hub .kmc-panel-title { font-size: 24px; }
+  #kmc-hub .kmc-frame { height: 1100px; }
+  #kmc-hub .kmc-frame.is-embed { height: 800px; }
+  #kmc-hub .kmc-toolbar { justify-content: stretch; }
+  #kmc-hub .kmc-toolbar .kmc-btn { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #kmc-hub .kmc-panel, #kmc-hub .kmc-tile, #kmc-hub .kmc-btn,
+  #kmc-hub .kmc-tile::before, #kmc-hub .kmc-cue, #kmc-hub .kmc-icon { transition: none; }
+  #kmc-hub .kmc-tile { animation: none; }
+  #kmc-hub .kmc-tile:hover, #kmc-hub .kmc-tile:focus-visible, #kmc-hub .kmc-btn:hover,
+  #kmc-hub .kmc-tile:hover .kmc-icon, #kmc-hub a.kmc-tile:hover .kmc-cue { transform: none; }
+}
+</style>
+
+<div id="kmc-hub"><p style="padding:24px 16px;text-align:center;font:16px/1.5 system-ui,sans-serif;color:#35474d;">If you can see this message, the student portal did not load. Please refresh the page, or let your coach know.</p></div>
+
+<script>
+(function () {
+  /* ====================================================================
+     SETTINGS - this is the ONLY part you need to edit.
+     Everything between the quote marks is plain text you can change.
+     Do not delete commas, quote marks, or brackets.
+     ==================================================================== */
+  var PORTAL = {
+
+    // true  = while you are still setting up, any tile that has no link yet
+    //         shows a dashed "Link needed" box so you can see what is missing.
+    // false = (set this before launch) tiles with no link are hidden, so
+    //         students only ever see tiles that work.
+    setupMode: true,
+
+    // The small caps line above the title.
+    eyebrow: "37-Day Success Plan",
+
+    // The big outlined number in the corner of the header. Use "" for none.
+    monument: "",
+
+    // The big title is built from three pieces so the middle word shows in
+    // the fancy italic style. "Your " + "Student" + " Portal" = Your Student Portal
+    // Keep the spaces inside the quote marks where they are.
+    titleBefore: "Your ",
+    titleAccent: "Student",
+    titleAfter: " Portal",
+
+    // The sentence under the title.
+    subtitle: "Everything you need for the 37 days, in one place. Tap an icon to open it.",
+
+    // The tiles. Each tile is one { ... } entry. Order here = order on the page.
+    //   icon:  calendar, film, script, upload, play, link, book, chat, star, folder, check
+    //   label: the name on the tile
+    //   blurb: the short line under the name
+    //   type:  "link"     = opens the web address in a new tab
+    //          "calendar" = opens a dropdown showing your calendar
+    //          "videos"   = opens a dropdown list of videos that play in place
+    //          "embed"    = opens a dropdown showing any web page inside it
+    //          "voomly"   = opens a dropdown that plays one Voomly video. Paste the
+    //                       Voomly share link (https://share.voomly.com/v/...) as url.
+    //                       ratio (optional) = the data-ratio number from Voomly's
+    //                       embed code, so the player is the right shape.
+    //   url:   the web address (for link, calendar and embed). Paste it between the quotes.
+    //          Leave it as "" if you do not have it yet. Never guess one.
+    //
+    // Example of a finished link tile:
+    //   { icon:"script", label:"Scripts", blurb:"Your word-for-word scripts", type:"link", url:"https://example.com/scripts" },
+    //
+    // Example of a finished videos tile (each video is { title, url }):
+    //   videos:[
+    //     { title:"Welcome - start here", url:"https://www.youtube.com/watch?v=XXXXXXXXXXX" },
+    //     { title:"How to post your video", url:"https://vimeo.com/123456789" }
+    //   ]
+    // Works with YouTube, Vimeo, Loom, and direct .mp4 / .webm / .mov files.
+    tiles: [
+      { icon: "calendar", label: "Calendar",        blurb: "Live calls and sessions",     type: "calendar", url: "https://logan-kmc.github.io/KMC-Calendars/30-day-success-plan.html" },
+      { icon: "film",     label: "How to Film Videos", blurb: "Watch before you record",  type: "voomly",   url: "https://share.voomly.com/v/w10bTRRWBC7RGhazzcDC-s5TwHibniith9sDVRpiSrihH00kG", ratio: 1.683333 },
+      { icon: "script",   label: "Scripts",         blurb: "Your word-for-word scripts",  type: "link",     url: "https://docs.google.com/document/d/1jgLgnSr3N2l2yBoNCbj_Uwxiumz6fPKQVb_Nsjrq2s0/copy?usp=sharing" },
+      { icon: "upload",   label: "Submit My Video", blurb: "Send a video for editing",    type: "link",     url: "https://app.kristamashore.com/widget/form/cilInULlvpvufipcc8mH" },
+      { icon: "book",     label: "Modules 1 through 4", blurb: "Your course lessons",  type: "link",     url: "" },
+      { icon: "play",     label: "Tutorials",       blurb: "Short how-to videos",         type: "videos",   videos: [ /* {title:"", url:""} */ ] }
+    ],
+
+    // The small line at the very bottom.
+    footer: "POWERED BY THE MASHORE METHOD"
+  };
+  /* ==================== END OF SETTINGS. Do not edit below. ==================== */
+
+  // Use the first portal box on the page that has not been filled yet, so the
+  // block can be pasted more than once on a page (e.g. a desktop and a mobile copy).
+  var root = document.querySelector('[id="kmc-hub"]:not([data-kmc-ready])');
+  if (!root) { return; }
+  root.setAttribute("data-kmc-ready", "1");
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  // Only web addresses starting with http:// or https:// are allowed.
+  function safeUrl(u) {
+    u = String(u == null ? "" : u).trim();
+    return /^https?:\/\/[^\s"'<>]+$/i.test(u) ? u : "";
+  }
+
+  var ICONS = {
+    calendar: '<rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+    script:   '<path d="M6 3h8.5L19 7.5V19a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M14 3v5h5M8 12.5h8M8 16h8M8 9h3"/>',
+    upload:   '<rect x="3" y="6" width="13" height="12" rx="2.5"/><path d="M16 10.5l5-3v9l-5-3z"/>',
+    play:     '<circle cx="12" cy="12" r="9"/><path d="M10 8.5l5.5 3.5-5.5 3.5z"/>',
+    link:     '<path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/>',
+    book:     '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16M8.5 7.5H16"/>',
+    chat:     '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4A2.5 2.5 0 0 1 4 13.5z"/>',
+    star:     '<path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9-4.3-4.1 5.9-.8z"/>',
+    folder:   '<path d="M3 6.5A2.5 2.5 0 0 1 5.5 4H10l2.5 3H18.5A2.5 2.5 0 0 1 21 9.5v8A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/>',
+    check:    '<circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/>',
+    film:     '<path d="M4 9.5h16V19a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19z"/><path d="M4 9.5l-.6-3a1.5 1.5 0 0 1 1.2-1.8l12.7-2.4a1.5 1.5 0 0 1 1.8 1.2l.5 2.6z"/><path d="M8.5 4.6l2.2 3.4M13.5 3.7l2.2 3.4"/>'
+  };
+  function icon(name) {
+    var p = ICONS.hasOwnProperty(name) ? ICONS[name] : ICONS.link;
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' + p + '</svg>';
+  }
+
+  // Turn a pasted video address into something we can show.
+  // Returns { kind: "iframe"|"video", src } or null.
+  function videoInfo(url) {
+    var u = safeUrl(url), m;
+    if (!u) { return null; }
+    m = u.match(/^https?:\/\/(?:www\.|m\.)?youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/)([\w-]{11})/i) ||
+        u.match(/^https?:\/\/youtu\.be\/([\w-]{11})/i);
+    if (m) { return { kind: "iframe", src: "https://www.youtube-nocookie.com/embed/" + m[1] + "?autoplay=1&rel=0" }; }
+    // Vimeo, including unlisted links that carry a private hash: vimeo.com/ID/HASH
+    m = u.match(/^https?:\/\/(?:www\.)?vimeo\.com\/(?:video\/)?(\d+)(?:\/([0-9a-f]+))?/i);
+    if (m) { return { kind: "iframe", src: "https://player.vimeo.com/video/" + m[1] + "?autoplay=1" + (m[2] ? "&h=" + m[2] : "") }; }
+    // Loom: the video id is the 32-character code at the end, even when the title is in the link.
+    m = u.match(/^https?:\/\/(?:www\.)?loom\.com\/(?:share|embed)\/(?:[\w-]*-)?([0-9a-f]{32})/i) ||
+        u.match(/^https?:\/\/(?:www\.)?loom\.com\/(?:share|embed)\/([\w]+)/i);
+    if (m) { return { kind: "iframe", src: "https://www.loom.com/embed/" + m[1] }; }
+    if (/\.(mp4|webm|mov)(?:[?#].*)?$/i.test(u)) { return { kind: "video", src: u }; }
+    return { kind: "iframe", src: u };
+  }
+
+  var inFrame = (function () { try { return window.self !== window.top; } catch (e) { return true; } })();
+  function tell(msg) { try { window.parent.postMessage(msg, "*"); } catch (e) {} }
+
+  var reduceMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+  // Work out which tiles to show.
+  function validVideos(t) {
+    var out = [], i, v;
+    var list = (t && t.videos) || [];
+    for (i = 0; i < list.length; i++) {
+      v = list[i];
+      if (v && safeUrl(v.url)) { out.push({ title: String(v.title || "Video " + (out.length + 1)), url: safeUrl(v.url) }); }
+    }
+    return out;
+  }
+  // Voomly: pull the video id out of a share link like https://share.voomly.com/v/ID
+  function voomlyId(t) {
+    var m = safeUrl(t.url).match(/^https:\/\/(?:share|app)\.voomly\.com\/v\/([\w-]+)/i);
+    return m ? m[1] : "";
+  }
+  var VOOMLY_SRC = "https://embed.voomly.com/embed/embed-build.js";
+  function startVoomly() {
+    // First time: load Voomly's script; it starts every player already on the page.
+    // Later times: the script is already here, so ask it to start the new player.
+    if (window.attachVoomlyPlayers) { try { window.attachVoomlyPlayers(); } catch (e) {} return; }
+    if (document.querySelector('script[src="' + VOOMLY_SRC + '"]')) { return; }
+    var s = document.createElement("script");
+    s.src = VOOMLY_SRC; s.async = true;
+    document.body.appendChild(s);
+  }
+
+  function hasLink(t) {
+    if (t.type === "videos") { return validVideos(t).length > 0; }
+    if (t.type === "voomly") { return !!voomlyId(t); }
+    return !!safeUrl(t.url);
+  }
+
+  var shown = [];
+  (PORTAL.tiles || []).forEach(function (t) {
+    if (!t) { return; }
+    var ok = hasLink(t);
+    if (ok || PORTAL.setupMode) { shown.push({ t: t, ok: ok }); }
+  });
+
+  // Build the page.
+  var html = '<div class="kmc-head">' +
+    (PORTAL.monument ? '<span class="kmc-mono" aria-hidden="true">' + esc(PORTAL.monument) + '</span>' : '') +
+    '<p class="kmc-eyebrow">' + esc(PORTAL.eyebrow) + '</p>' +
+    '<h2 class="kmc-title">' + esc(PORTAL.titleBefore) + '<em>' + esc(PORTAL.titleAccent) + '</em>' + esc(PORTAL.titleAfter) + '</h2>' +
+    '<p class="kmc-sub">' + esc(PORTAL.subtitle) + '</p></div>';
+
+  if (!shown.length) {
+    html += '<p class="kmc-empty">Your portal links are on the way. Check back soon.</p>';
+  } else {
+    html += '<div class="kmc-grid">';
+    shown.forEach(function (s, i) {
+      var t = s.t;
+      var inner = '<span class="kmc-icon">' + icon(t.icon) + '</span>' +
+        '<span class="kmc-label">' + esc(t.label) + '</span>' +
+        '<span class="kmc-blurb">' + esc(t.blurb) + '</span>';
+      var CUE_OUT = '<span class="kmc-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16L16 8M9 8h7v7"/></svg></span>';
+      var CUE_DOWN = '<span class="kmc-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10l5 5 5-5"/></svg></span>';
+      var d = ' style="--d:' + i + '"';
+      if (!s.ok) {
+        html += '<button type="button" class="kmc-tile is-needed" data-i="' + i + '"' + d + ' disabled aria-disabled="true" title="Link needed - add the link in the settings">' +
+          inner + '<span class="kmc-chip">Link needed</span></button>';
+      } else if (t.type === "link") {
+        html += '<a class="kmc-tile" data-i="' + i + '"' + d + ' href="' + esc(safeUrl(t.url)) + '" target="_blank" rel="noopener">' + inner + CUE_OUT + '<span class="kmc-sr"> (opens in a new tab)</span></a>';
+      } else {
+        html += '<button type="button" class="kmc-tile" data-i="' + i + '"' + d + ' aria-expanded="false">' + inner + CUE_DOWN + '</button>';
+      }
+    });
+    html += '</div>';
+  }
+  if (PORTAL.footer) { html += '<p class="kmc-foot">' + esc(PORTAL.footer) + '</p>'; }
+  root.innerHTML = html;
+
+  var grid = root.querySelector(".kmc-grid");
+  if (!grid) { return; }
+  var tileEls = Array.prototype.slice.call(grid.querySelectorAll(".kmc-tile"));
+
+  var PANEL_ID = "kmc-hub-panel-" + Math.random().toString(36).slice(2, 8);
+  var current = null;   // { tile, panel }
+  var closeTimer = null;
+
+  function buildBody(t) {
+    var body = document.createElement("div");
+    body.className = "kmc-panel-body";
+    var url = safeUrl(t.url);
+    if (t.type === "calendar" || t.type === "embed") {
+      var cls = t.type === "embed" ? "kmc-frame is-embed" : "kmc-frame";
+      body.innerHTML = '<div class="kmc-toolbar"><a class="kmc-btn" href="' + esc(url) + '" target="_blank" rel="noopener">Open full screen</a></div>' +
+        '<iframe class="' + cls + '" src="' + esc(url) + '" title="' + esc(t.label) + '"></iframe>';
+    } else if (t.type === "voomly") {
+      var vid = voomlyId(t);
+      var ratio = parseFloat(t.ratio) > 0 ? parseFloat(t.ratio) : 16 / 9;
+      body.innerHTML = '<div class="kmc-toolbar"><a class="kmc-btn" href="' + esc(url) + '" target="_blank" rel="noopener">Open full screen</a></div>' +
+        '<div class="voomly-embed kmc-voomly" data-id="' + esc(vid) + '" data-ratio="' + ratio + '" data-type="v" data-skin-color="#008EFF" data-shadow=""' +
+        ' style="width:100%;aspect-ratio:' + ratio + ' / 1;background:linear-gradient(45deg,#8e96a4 0%,#c9d0de 100%);border-radius:10px;"></div>';
+    } else if (t.type === "videos") {
+      var vids = validVideos(t);
+      var h = '<ul class="kmc-vlist">';
+      vids.forEach(function (v, i) {
+        h += '<li><button type="button" class="kmc-vitem" data-v="' + i + '">' + icon("play") + '<span>' + esc(v.title) + '</span></button></li>';
+      });
+      h += '</ul><div class="kmc-player" aria-live="polite"></div>';
+      body.innerHTML = h;
+      body.addEventListener("click", function (e) {
+        var b = e.target.closest ? e.target.closest(".kmc-vitem") : null;
+        if (!b || !body.contains(b)) { return; }
+        var v = vids[parseInt(b.getAttribute("data-v"), 10)];
+        if (!v) { return; }
+        Array.prototype.forEach.call(body.querySelectorAll(".kmc-vitem"), function (x) { x.classList.remove("is-playing"); });
+        b.classList.add("is-playing");
+        var box = body.querySelector(".kmc-player");
+        box.innerHTML = "";               // removes any old player, which stops it
+        var info = videoInfo(v.url);
+        if (!info) { return; }
+        var wrap = document.createElement("div");
+        wrap.className = "kmc-player-box";
+        var el;
+        if (info.kind === "video") {
+          el = document.createElement("video");
+          el.controls = true; el.setAttribute("playsinline", ""); el.autoplay = true;
+          el.src = info.src;
+        } else {
+          el = document.createElement("iframe");
+          el.src = info.src; el.title = v.title;
+          el.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
+          el.setAttribute("allowfullscreen", "");
+          el.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+        }
+        wrap.appendChild(el);
+        box.appendChild(wrap);
+      });
+    }
+    return body;
+  }
+
+  // Put the panel right after the last tile in the clicked tile's row.
+  // Only move it when the row actually changed: moving an iframe reloads it,
+  // which would wipe a half-filled booking form or restart a video.
+  function place(tile, panel) {
+    var top = tile.offsetTop, last = tileEls.indexOf(tile), i;
+    for (i = last + 1; i < tileEls.length; i++) {
+      if (Math.abs(tileEls[i].offsetTop - top) < 3) { last = i; } else { break; }
+    }
+    var before = tileEls[last + 1] || null;
+    if (panel.parentNode !== grid || panel.nextSibling !== before) {
+      grid.insertBefore(panel, before);
+    }
+    var caret = panel.querySelector(".kmc-caret");
+    if (caret) { caret.style.left = (tile.offsetLeft + tile.offsetWidth / 2) + "px"; }
+  }
+
+  function removePanel(c) {
+    if (c.panel.parentNode) { c.panel.parentNode.removeChild(c.panel); }
+    c.tile.removeAttribute("aria-controls");
+  }
+
+  function closePanel(returnFocus) {
+    if (!current) { return; }
+    var c = current; current = null;
+    c.tile.classList.remove("is-open");
+    c.tile.setAttribute("aria-expanded", "false");
+    c.panel.classList.remove("is-open");
+    if (reduceMotion) { removePanel(c); } else {
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(function () { removePanel(c); }, 300);
+    }
+    if (returnFocus) { c.tile.focus(); }
+  }
+
+  function openPanel(tile) {
+    var s = shown[parseInt(tile.getAttribute("data-i"), 10)];
+    if (!s) { return; }
+    if (current) {
+      var prev = current;
+      current = null;
+      clearTimeout(closeTimer);
+      prev.tile.classList.remove("is-open");
+      prev.tile.setAttribute("aria-expanded", "false");
+      removePanel(prev);
+    } else {
+      // a previous panel may still be fading out; clear it now
+      var old = grid.querySelector(".kmc-panel");
+      if (old) { clearTimeout(closeTimer); old.parentNode.removeChild(old); }
+    }
+    var t = s.t;
+    var panel = document.createElement("div");
+    panel.className = "kmc-panel";
+    panel.id = PANEL_ID;
+    panel.setAttribute("role", "region");
+    panel.setAttribute("aria-label", t.label);
+    panel.innerHTML = '<span class="kmc-caret" aria-hidden="true"></span><div class="kmc-panel-clip"><div class="kmc-panel-card">' +
+      '<div class="kmc-panel-head"><h3 class="kmc-panel-title">' + esc(t.label) + '</h3>' +
+      '<button type="button" class="kmc-close" aria-label="Close ' + esc(t.label) + '">&times;</button></div></div></div>';
+    panel.querySelector(".kmc-panel-card").appendChild(buildBody(t));
+    panel.querySelector(".kmc-close").addEventListener("click", function () { closePanel(true); });
+
+    place(tile, panel);
+    if (t.type === "voomly") { startVoomly(); }
+    tile.classList.add("is-open");
+    tile.setAttribute("aria-expanded", "true");
+    tile.setAttribute("aria-controls", PANEL_ID);
+    current = { tile: tile, panel: panel };
+
+    if (reduceMotion) { panel.classList.add("is-open"); } else {
+      void panel.offsetHeight;   // let the browser see the closed state first
+      panel.classList.add("is-open");
+    }
+    setTimeout(function () {
+      if (!current || current.panel !== panel) { return; }
+      var r = panel.getBoundingClientRect();
+      if (inFrame) {
+        // Inside an iframe the frame is as tall as the page, so ask the host page
+        // to bring the dropdown into view instead.
+        tell({ type: "kmc-hub-scroll", top: Math.round(r.top + window.pageYOffset) - 90 });
+        return;
+      }
+      if (r.top < 0 || r.bottom > (window.innerHeight || document.documentElement.clientHeight)) {
+        try { panel.scrollIntoView({ block: "nearest", behavior: reduceMotion ? "auto" : "smooth" }); }
+        catch (e) { panel.scrollIntoView(); }
+      }
+    }, reduceMotion ? 0 : 300);
+  }
+
+  grid.addEventListener("click", function (e) {
+    var tile = e.target.closest ? e.target.closest(".kmc-tile") : null;
+    if (!tile || !grid.contains(tile) || tile.tagName === "A" || tile.disabled) { return; }
+    if (current && current.tile === tile) { closePanel(false); } else { openPanel(tile); }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if ((e.key === "Escape" || e.key === "Esc") && current) {
+      e.preventDefault();
+      closePanel(true);
+    }
+  });
+
+  // If the window changes size, keep the panel under the right row.
+  var resizeTimer = null;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if (current) { place(current.tile, current.panel); }
+    }, 120);
+  });
+
+  // When this page is shown inside an iframe (the hosted GitHub version), tell the
+  // host page how tall we are, so the iframe grows and shrinks with the dropdowns
+  // instead of cutting them off. The embed snippet in the README listens for this.
+  function reportHeight() {
+    if (!inFrame) { return; }
+    var hgt = Math.ceil(document.documentElement.getBoundingClientRect().height);
+    if (hgt !== lastHeight) { lastHeight = hgt; tell({ type: "kmc-hub-height", height: hgt }); }
+  }
+  var lastHeight = 0;
+  if (inFrame) {
+    if (window.ResizeObserver) { new ResizeObserver(reportHeight).observe(document.documentElement); }
+    window.addEventListener("load", reportHeight);
+    setInterval(reportHeight, 1000);   // safety net for anything the observer misses
+    reportHeight();
+  }
+})();
+</script>
+<!-- ===== COPY TO HERE ===== -->
+
+</body>
+</html>
