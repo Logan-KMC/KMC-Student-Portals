@@ -16,7 +16,11 @@
     if (!frame || e.source !== frame.contentWindow || e.origin !== "https://logan-kmc.github.io") { return; }
     var d = e.data || {};
     // The portal reports its height: match it so nothing is cut off.
-    if (d.type === "kmc-hub-height" && d.height > 0) { frame.style.height = d.height + "px"; }
+    if (d.type === "kmc-hub-height" && d.height > 0) {
+      frame.style.height = d.height + "px";
+      // If GHL put this code inside its own box (course lessons do), tell that page the height too.
+      if (window.parent !== window) { window.parent.postMessage({ type: "kmc-portal-height", height: d.height }, "*"); }
+    }
     // A dropdown opened: bring it into view if it is below the fold.
     if (d.type === "kmc-hub-scroll") {
       var y = frame.getBoundingClientRect().top + window.pageYOffset + (d.top || 0);

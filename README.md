@@ -43,3 +43,12 @@ Tile types:
 
 - No passwords, client data or private links in this repo. It is public, and anything in it can be seen by anyone.
 - Never invent a link. If you don't have it, leave the quotes empty.
+
+## Portal inside a GHL course lesson
+
+Course lessons put the embed code inside their own fixed-size box, which cuts the portal off and adds a scrollbar. To make the box fit the portal:
+
+1. Paste the program's `-EMBED.html` code into the lesson as usual.
+2. Paste everything in `ghl-course-custom-js.js` into the course's **Custom JS** field.
+
+The box then grows and shrinks with the portal, so Mark As Complete sits below it.
