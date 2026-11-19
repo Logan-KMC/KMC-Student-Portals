@@ -6,6 +6,8 @@ One portal page per program, served by GitHub Pages and embedded in GoHighLevel.
 |---|---|---|
 | 37-Day Success Plan | https://logan-kmc.github.io/KMC-Student-Portals/37-day-success-plan.html | `37-day-success-plan-EMBED.html` |
 
+**Full tested GHL recipe (Funnel pages and course lessons, with every code to paste): see `GHL-SETUP.md`.**
+
 ## Putting a portal in GHL
 
 1. Open the program's `-EMBED.html` file and copy everything in it.
