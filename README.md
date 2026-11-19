@@ -49,6 +49,19 @@ Tile types:
 Course lessons put the embed code inside their own fixed-size box, which cuts the portal off and adds a scrollbar. To make the box fit the portal:
 
 1. Paste the program's `-EMBED.html` code into the lesson as usual.
-2. Paste everything in `ghl-course-custom-js.js` into the course's **Custom JS** field.
+2. Paste everything in `ghl-course-custom-js.js` into the course's **Custom JS** field. (Lesson text does not run scripts, so this does the resizing.)
+3. Paste this into the course's **Custom CSS** field. GHL locks the lesson text box at 600px tall with a scrollbar; this lets it grow:
+
+```css
+.lessonRoot .post-description-container { height: auto !important; max-height: none !important; overflow: visible !important; }
+```
+
+Optional, to hide the left lesson menu so only the portal shows:
+
+```css
+.lessonRoot #category-list,
+.lessonRoot :has(#category-list):not(:has(.post-details, .main-section, .post-body, #post-description)) { display: none !important; }
+.lessonRoot :has(> * #category-list, > #category-list) > :not(:has(#category-list)) { width: 100% !important; max-width: 100% !important; flex: 1 1 100% !important; grid-column: 1 / -1 !important; margin-left: 0 !important; }
+```
 
 The box then grows and shrinks with the portal, so Mark As Complete sits below it.
