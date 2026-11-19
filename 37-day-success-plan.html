@@ -223,6 +223,10 @@
 #kmc-hub .kmc-btn:hover { transform: translateY(-1px); color: #fff; }
 #kmc-hub .kmc-frame { display: block; width: 100%; height: 1000px; border: 0; border-radius: 10px; background: var(--moonstone); }
 #kmc-hub .kmc-frame.is-embed { height: 700px; }
+/* Calendar: drawn at desktop width and shrunk to fit (see fit() in the script) */
+#kmc-hub .kmc-panel-body.is-calendar { padding: 10px; }
+#kmc-hub .kmc-fit { position: relative; width: 100%; overflow: hidden; border-radius: 10px; background: #F3F1FA; }
+#kmc-hub .kmc-fit-frame { display: block; border: 0; transform-origin: 0 0; background: #F3F1FA; }
 
 /* Videos */
 #kmc-hub .kmc-vlist { list-style: none; margin: 0 0 4px; padding: 0; display: grid; gap: 8px; }
@@ -317,7 +321,9 @@
     //   label: the name on the tile
     //   blurb: the short line under the name
     //   type:  "link"     = opens the web address in a new tab
-    //          "calendar" = opens a dropdown showing your calendar
+    //          "calendar" = opens a dropdown showing your calendar, shrunk to fit so the
+    //                       whole week stays on one line. designHeight = how tall the
+    //                       calendar page is at full width (raise it if the bottom gets cut off).
     //          "videos"   = opens a dropdown list of videos that play in place
     //          "embed"    = opens a dropdown showing any web page inside it
     //          "voomly"   = opens a dropdown that plays one Voomly video. Paste the
@@ -337,7 +343,7 @@
     //   ]
     // Works with YouTube, Vimeo, Loom, and direct .mp4 / .webm / .mov files.
     tiles: [
-      { icon: "calendar", label: "Calendar",        blurb: "Live calls and sessions",     type: "calendar", url: "https://logan-kmc.github.io/KMC-Calendars/30-day-success-plan.html" },
+      { icon: "calendar", label: "Calendar",        blurb: "Live calls and sessions",     type: "calendar", url: "https://logan-kmc.github.io/KMC-Calendars/30-day-success-plan.html", designHeight: 700 },
       { icon: "film",     label: "How to Film Videos", blurb: "Watch before you record",  type: "voomly",   url: "https://share.voomly.com/v/w10bTRRWBC7RGhazzcDC-s5TwHibniith9sDVRpiSrihH00kG", ratio: 1.683333 },
       { icon: "script",   label: "Scripts",         blurb: "Your word-for-word scripts",  type: "link",     url: "https://docs.google.com/document/d/1jgLgnSr3N2l2yBoNCbj_Uwxiumz6fPKQVb_Nsjrq2s0/copy?usp=sharing" },
       { icon: "upload",   label: "Submit My Video", blurb: "Send a video for editing",    type: "link",     url: "https://app.kristamashore.com/widget/form/cilInULlvpvufipcc8mH" },
@@ -489,14 +495,40 @@
   var current = null;   // { tile, panel }
   var closeTimer = null;
 
+  // Below this width (in pixels) the calendar uses its own phone layout instead of shrinking.
+  var PHONE_FIT_MIN = 560;
+
   function buildBody(t) {
     var body = document.createElement("div");
     body.className = "kmc-panel-body";
     var url = safeUrl(t.url);
-    if (t.type === "calendar" || t.type === "embed") {
-      var cls = t.type === "embed" ? "kmc-frame is-embed" : "kmc-frame";
+    if (t.type === "calendar") {
+      // Draw the calendar at full desktop width, then shrink it to fit the
+      // dropdown, so Monday to Friday always sit on one line.
+      body.className += " is-calendar";
+      var dw = parseFloat(t.designWidth) > 0 ? parseFloat(t.designWidth) : 1180;
+      var dh = parseFloat(t.designHeight) > 0 ? parseFloat(t.designHeight) : 700;
+      body.innerHTML = '<div class="kmc-fit"><iframe class="kmc-fit-frame" src="' + esc(url) + '" title="' + esc(t.label) + '"></iframe></div>';
+      var box = body.querySelector(".kmc-fit"), fr = body.querySelector("iframe");
+      var fit = function () {
+        var w = box.clientWidth;
+        if (!w) { return; }
+        if (w < PHONE_FIT_MIN) {
+          // Phone: shrinking a full week this small makes it unreadable, so let
+          // the calendar use its own phone layout instead.
+          box.style.height = ""; fr.style.width = "100%"; fr.style.height = "1100px"; fr.style.transform = "none";
+          return;
+        }
+        var s = Math.min(1, w / dw);
+        fr.style.width = dw + "px"; fr.style.height = dh + "px";
+        fr.style.transform = "scale(" + s + ")";
+        box.style.height = Math.ceil(dh * s) + "px";
+      };
+      if (window.ResizeObserver) { new ResizeObserver(fit).observe(box); } else { window.addEventListener("resize", fit); }
+      setTimeout(fit, 0);
+    } else if (t.type === "embed") {
       body.innerHTML = '<div class="kmc-toolbar"><a class="kmc-btn" href="' + esc(url) + '" target="_blank" rel="noopener">Open full screen</a></div>' +
-        '<iframe class="' + cls + '" src="' + esc(url) + '" title="' + esc(t.label) + '"></iframe>';
+        '<iframe class="kmc-frame is-embed" src="' + esc(url) + '" title="' + esc(t.label) + '"></iframe>';
     } else if (t.type === "voomly") {
       var vid = voomlyId(t);
       var ratio = parseFloat(t.ratio) > 0 ? parseFloat(t.ratio) : 16 / 9;
