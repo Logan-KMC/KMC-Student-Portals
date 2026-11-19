@@ -34,6 +34,8 @@ Tile types:
 | `voomly` | Dropdown that plays one Voomly video. `url` is the share link; `ratio` comes from Voomly's embed code. |
 | `videos` | Dropdown list of YouTube, Vimeo, Loom or .mp4 videos that play in place |
 
+A `link` tile can also have a `notice`: the tile then opens a dropdown with a message to read first (a title, a list of lines and a closing note), and a pink button that opens the link. The 37-Day "Submit My Video" tile uses this for the recording requirements.
+
 ## A portal for another program
 
 1. Copy `37-day-success-plan.html` and rename it for the program, for example `boss-program.html`.
